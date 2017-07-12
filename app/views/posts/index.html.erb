@@ -1,0 +1,19 @@
+<h1>Resume Posts</h1>
+
+<% flash.each do |type, message| %>
+  <p>
+    <strong><em><%= message %></em></strong>
+  </p>
+<% end %>
+
+<p><%= link_to "Create", posts_new_path %></p>
+  <% @posts.each do |post|  %>
+  <div>
+    <p>
+      <%= image_tag post.photo.url(:medium) %><br>
+      <%= post.description %>
+    </p>
+    <%= time_ago_in_words post.created_at %>
+    <hr>
+  </div>
+  <% end %>
