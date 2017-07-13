@@ -1,19 +1,16 @@
-<h1>Resume Posts</h1>
-
-<% flash.each do |type, message| %>
-  <p>
-    <strong><em><%= message %></em></strong>
-  </p>
-<% end %>
-
-<p><%= link_to "Create", posts_new_path %></p>
-  <% @posts.each do |post|  %>
-  <div>
-    <p>
-      <%= image_tag post.photo.url(:medium) %><br>
-      <%= post.description %>
-    </p>
-    <%= time_ago_in_words post.created_at %>
-    <hr>
+<% @posts.each do |post| %>
+<div class="post">
+  <div class="post__header">
+    <strong><%= post.user.username %></strong>
   </div>
-  <% end %>
+  <div class="post__body">
+    <%= image_tag post.photo.url(:medium) %>
+    <div class="post__description">
+      <strong><%= post.user.username %></strong> <%= post.description %>
+    </div>
+  </div>
+  <div class="post__footer">
+    <%= time_ago_in_words post.created_at %>
+  </div>
+</div>
+<% end %>
