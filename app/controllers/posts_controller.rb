@@ -20,7 +20,16 @@ class PostsController < ApplicationController
     end
   end
 
-  def delete
+  def show
+    begin
+      @post = Post.find(params[:id])
+    rescue => exception
+      redirect_to posts_path, flash: { alert: "The post has not found "}
+    end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
     post.destroy
     redirect_to posts_path, flash: { success: 'The post has been delete' }
   end

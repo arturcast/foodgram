@@ -1,0 +1,30 @@
+<div class="post">
+  <div class="post__header">
+    <strong><%= post.user.username %></strong>
+  </div>
+  <div class="post__body">
+    <% if detail %>
+      <%= link_to post do %>
+        <%= image_tag post.photo.url(:medium) %>
+      <% end %>
+    <% else %>
+      <%= image_tag post.photo.url(:medium) %>
+    <% end %>
+    <div class="post__description">
+      <strong><%= post.user.username %></strong> <%= post.description %>
+    
+      <div class="btn-group pull-right">
+          <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: 0px;">
+            <span class="glyphicon glyphicon-option-horizontal"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Destroy', @post, method: :delete %></li>
+          </ul>
+      </div>
+      
+    </div>
+  </div>
+  <div class="post__footer">
+    <%= time_ago_in_words post.created_at %>
+  </div>
+</div>
