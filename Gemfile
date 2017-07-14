@@ -55,3 +55,8 @@ gem "paperclip", "~> 5.1.0"
 # Import Bootstrap and jQuery
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+# Authentication solution
+gem 'devise', '~> 4.3'
+
+gem 'bcrypt', platforms: :ruby
