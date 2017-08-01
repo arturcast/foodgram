@@ -60,3 +60,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise', '~> 4.3'
 
 gem 'bcrypt', platforms: :ruby
+
+# Adding confirmation email in web browser
+gem "letter_opener", :group => :development

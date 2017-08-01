@@ -33,7 +33,10 @@ Rails.application.configure do
 
   # Devise configuration for local development
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  
+
+  # Preview emails in default browser
+  config.action_mailer.delivery_method = :letter_opener
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

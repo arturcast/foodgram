@@ -1,0 +1,8 @@
+<h1>@<%= @user.username %></h1>
+<div class="row">
+<% @posts.each do |post| %>
+  <div class="col-md-6">
+    <%= render 'posts/post', post: post, profilable: false %>
+  </div>
+<% end %>
+</div>
