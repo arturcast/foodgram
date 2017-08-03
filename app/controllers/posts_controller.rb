@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc).limit(10)
+    @comment = Comment.new
   end
 
   def new
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   def show
     begin
       @post = Post.find(params[:id])
+      @comment = Comment.new
     rescue => exception
       redirect_to posts_path, flash: { alert: "The post has not found "}
     end

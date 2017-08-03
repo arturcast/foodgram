@@ -1,0 +1,6 @@
+<div class="post__comment">
+  <%= link_to profile_path(comment.user.username) do %>
+    <strong><%= comment.user.username %></strong>
+  <% end %>
+  <%= comment.text %>
+</div>

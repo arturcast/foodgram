@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :comments
   
   validates :description, presence: true
   has_attached_file :photo, styles: { medium: "600x600>" }, default_url: "/images/:style/missing.png"
